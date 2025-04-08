@@ -1,60 +1,107 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sean Mathew Rosenthal | Photography Portfolio</title>
+  <title>Sean Mathew Rosenthal</title>
   <style>
-    body { background-color: #121212; color: #f0f0f0; font-family: 'Helvetica Neue', sans-serif; margin: 0; padding: 0; }
-    header, footer { text-align: center; padding: 2em; }
-    a { color: #1e90ff; text-decoration: none; }
-    nav { text-align: center; margin: 2em 0; }
-    nav a { margin: 0 1em; }
-    .bio { max-width: 600px; margin: 2em auto; text-align: center; }
-    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1em; padding: 2em; }
-    .gallery img { width: 100%; height: auto; display: block; border-radius: 4px; }
-    .store { max-width: 600px; margin: 3em auto; padding: 1em; border-top: 1px solid #333; }
-    .store-item { margin: 1em 0; }
-    .store-item select { background: #222; color: #f0f0f0; border: 1px solid #444; padding: 0.5em; }
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #555;
+      color: white;
+    }
+    header {
+      background: url('photos/hero-image.jpg') center/cover no-repeat;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 1rem 2rem;
+      border-radius: 8px;
+    }
+    nav {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+    }
+    nav a {
+      margin: 0 12px;
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+    .grid {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 4rem 2rem;
+      flex-wrap: wrap;
+    }
+    .grid-item {
+      width: 300px;
+      text-align: center;
+    }
+    .grid-item img {
+      width: 100%;
+      height: auto;
+      border: 4px solid white;
+    }
+    .grid-item a {
+      display: inline-block;
+      margin-top: 1rem;
+      color: white;
+      font-weight: bold;
+      text-decoration: underline;
+      font-size: 1rem;
+    }
+    .instagram-icon {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+    }
+    .instagram-icon img {
+      width: 24px;
+      height: 24px;
+      opacity: 0.8;
+    }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>Sean Mathew Rosenthal</h1>
+    <h1>SEAN MATHEW ROSENTHAL</h1>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="dizziness.html">DIZZINESS</a>
-      <a href="hello-you-are-currently-being-recorded.html">HELLO, YOU ARE CURRENTLY BEING RECORDED</a>
-      <a href="video.html">Video</a>
-      <a href="https://instagram.com/SeanMathewRosenthal" target="_blank">Instagram</a>
+      <a href="#">HOME</a>
+      <a href="#">PERSONAL</a>
+      <a href="#">WIP</a>
+      <a href="#">PROFESSIONAL</a>
+      <a href="#">ABOUT</a>
     </nav>
   </header>
 
-  <section class="bio">
-    <p>Photographer and writer originally from central Jersey, then Pittsburgh, then northeast Florida, and now New York. SVA '27 PITT '20</p>
-  </section>
-
-  <section class="gallery">
-    <img src="photos/dog1.jpg" alt="Cute Dog 1">
-    <img src="photos/dog2.jpg" alt="Cute Dog 2">
-    <img src="photos/dog3.jpg" alt="Cute Dog 3">
-  </section>
-
-  <section class="store">
-    <h2>Buy Prints</h2>
-    <div class="store-item">
-      <p>Print Title 1</p>
-      <select>
-        <option>8x10 - $25</option>
-        <option>12x16 - $40</option>
-        <option>18x24 - $65</option>
-      </select>
+  <section class="grid">
+    <div class="grid-item">
+      <img src="photos/professional.jpg" alt="Professional Work">
+      <a href="professional.html">PROFESSIONAL</a>
+    </div>
+    <div class="grid-item">
+      <img src="photos/personal.jpg" alt="Personal Work">
+      <a href="personal.html">PERSONAL</a>
     </div>
   </section>
 
-  <footer>
-    <p>&copy; 2025 Sean Mathew Rosenthal. All rights reserved.</p>
-  </footer>
+  <a href="https://instagram.com/SeanMathewRosenthal" target="_blank" class="instagram-icon">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+  </a>
+
 </body>
 </html>
