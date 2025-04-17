@@ -1,16 +1,29 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>DIZZINESS | Photography Project</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DIZZINESS</title>
   <style>
     body { background-color: #121212; color: #f0f0f0; font-family: 'Helvetica Neue', sans-serif; margin: 0; padding: 0; }
     header, footer { text-align: center; padding: 2em; }
     nav a { color: #1e90ff; margin: 0 1em; text-decoration: none; }
-    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1em; padding: 2em; }
-    .gallery img { width: 100%; border-radius: 4px; }
+    .slideshow-container { position: relative; max-width: 90%; margin: 2em auto; }
+    .slide { display: none; }
+    .slide img { width: 100%; height: auto; border-radius: 4px; }
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      padding: 16px;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      user-select: none;
+      transform: translateY(-50%);
+    }
+    .prev { left: 0; }
+    .next { right: 0; }
   </style>
 </head>
 <body>
@@ -18,10 +31,44 @@
     <h1>DIZZINESS</h1>
     <nav><a href="index.html">Home</a></nav>
   </header>
-  <section class="gallery">
-    <img src="photos/dog1.jpg" alt="Photo 1">
-    <img src="photos/dog2.jpg" alt="Photo 2">
-  </section>
-  <footer><p>&copy; 2025 Sean Mathew Rosenthal</p></footer>
+
+  <div class="slideshow-container">
+    <div class="slide"><img src="photos/dizziness1.jpg" alt="Dizziness 1"></div>
+    <div class="slide"><img src="photos/dizziness2.jpg" alt="Dizziness 2"></div>
+    <div class="slide"><img src="photos/dizziness3.jpg" alt="Dizziness 3"></div>
+    <div class="slide"><img src="photos/dizziness4.jpg" alt="Dizziness 4"></div>
+    <div class="slide"><img src="photos/dizziness5.jpg" alt="Dizziness 5"></div>
+    <div class="slide"><img src="photos/dizziness6.jpg" alt="Dizziness 6"></div>
+    <div class="slide"><img src="photos/dizziness7.jpg" alt="Dizziness 7"></div>
+    <div class="slide"><img src="photos/dizziness8.jpg" alt="Dizziness 8"></div>
+    <div class="slide"><img src="photos/dizziness9.jpg" alt="Dizziness 9"></div>
+    <div class="slide"><img src="photos/dizziness10.jpg" alt="Dizziness 10"></div>
+
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Sean Mathew Rosenthal</p>
+  </footer>
+
+  <script>
+    let slideIndex = 0;
+    showSlides();
+    function plusSlides(n) {
+      slideIndex += n - 1;
+      showSlides();
+    }
+    function showSlides() {
+      const slides = document.getElementsByClassName("slide");
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) slideIndex = 1;
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 4000);
+    }
+  </script>
 </body>
 </html>
