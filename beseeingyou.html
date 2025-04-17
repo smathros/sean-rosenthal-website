@@ -5,39 +5,99 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BE SEEING YOU</title>
   <style>
-    body { background-color: #121212; color: #f0f0f0; font-family: 'Helvetica Neue', sans-serif; margin: 0; padding: 0; }
-    header, footer { text-align: center; padding: 2em; }
-    nav a { color: #1e90ff; margin: 0 1em; text-decoration: none; }
-.slideshow-container {
-  max-height: 90vh;
-  overflow: hidden;
-}
-    .slide { display: none; }
-.slide img {
-  display: block;
-  margin: 0 auto;
-  max-height: 90vh;
-  max-width: 100%;
-  width: auto;
-  height: auto;
-  border-radius: 4px;
-}
+    /* Prevent any scrolling and fill the viewport */
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header and footer each take 10% of viewport height */
+    header {
+      flex: 0 0 10vh;
+      background-color: #121212;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2em;
+      box-sizing: border-box;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+    header nav a {
+      color: #1e90ff;
+      text-decoration: none;
+      font-weight: 500;
+      margin-left: 1em;
+    }
+
+    footer {
+      flex: 0 0 10vh;
+      background-color: #121212;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+    footer p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    /* Slideshow container fills the middle 80% */
+    .slideshow-container {
+      flex: 1 1 auto;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #121212;
+    }
+
+    /* Hide all slides by default */
+    .slide {
+      display: none;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Responsive image sizing */
+    .slide img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto;
+      border-radius: 4px;
+    }
+
+    /* Arrow controls */
     .prev, .next {
       cursor: pointer;
       position: absolute;
       top: 50%;
       padding: 16px;
       color: white;
-      font-size: 18px;
+      font-size: 24px;
       font-weight: bold;
       user-select: none;
       transform: translateY(-50%);
+      background-color: rgba(0,0,0,0.4);
+      border-radius: 50%;
     }
-    .prev { left: 0; }
-    .next { right: 0; }
+    .prev { left: 16px; }
+    .next { right: 16px; }
   </style>
 </head>
 <body>
+
   <header>
     <h1>BE SEEING YOU</h1>
     <nav><a href="index.html">Home</a></nav>
@@ -62,31 +122,27 @@
     <p>&copy; 2025 Sean Mathew Rosenthal</p>
   </footer>
 
-<script>
-  let slideIndex = 1;
-  showSlides(slideIndex);
+  <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
 
-  function plusSlides(n) {
-    showSlides(slideIndex += n);
-  }
-
-  function showSlides(n) {
-    const slides = document.getElementsByClassName("slide");
-    if (n > slides.length) slideIndex = 1;
-    if (n < 1)             slideIndex = slides.length;
-    for (let s of slides)  s.style.display = "none";
-    slides[slideIndex - 1].style.display = "block";
-  }
-
-  // Listen for left/right arrow keys
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowLeft') {
-      plusSlides(-1);
-    } else if (e.key === 'ArrowRight') {
-      plusSlides(1);
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
     }
-  });
-</script>
 
+    function showSlides(n) {
+      const slides = document.getElementsByClassName("slide");
+      if (n > slides.length) slideIndex = 1;
+      if (n < 1)           slideIndex = slides.length;
+      for (let s of slides) s.style.display = "none";
+      slides[slideIndex - 1].style.display = "block";
+    }
+
+    // Arrow‐key navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft')  plusSlides(-1);
+      else if (e.key === 'ArrowRight') plusSlides(1);
+    });
+  </script>
 </body>
 </html>
