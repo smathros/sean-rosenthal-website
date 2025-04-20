@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About | Sean Mathew Rosenthal</title>
+  <style>
+    /* full‑page, no scroll */
+    html, body {
+      margin: 0; padding: 0;
+      height: 100vh; overflow: hidden;
+      font-family: 'Helvetica Neue', sans-serif;
+      color: #fff;
+    }
+    /* background image (drop your file at photos/about-bg.jpg) */
+    body {
+      background: url("photos/about-bg.jpg") no-repeat center center;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+    }
+    /* header/nav */
+    header {
+      flex: 0 0 60px;
+      background: rgba(0,0,0,0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    nav {
+      display: flex;
+      gap: 2rem;
+    }
+    nav a {
+      color: #1e90ff;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    /* main content box */
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      box-sizing: border-box;
+    }
+    .about-box {
+      background: rgba(0,0,0,0.6);
+      padding: 2rem;
+      border-radius: 8px;
+      max-width: 600px;
+      text-align: center;
+      line-height: 1.5;
+    }
+    .about-box p { margin: 0.8rem 0; }
+    /* footer */
+    footer {
+      flex: 0 0 40px;
+      background: rgba(0,0,0,0.6);
+      text-align: center;
+      font-size: 0.85rem;
+      line-height: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="dizziness.html">Dizziness</a>
+      <a href="hello-you-are-currently-being-recorded.html">Hello, You Are Currently Being Recorded</a>
+      <a href="beseeingyou.html">Be Seeing You</a>
+      <a href="video.html">Video</a>
+      <a href="https://instagram.com/SeanMathewRosenthal" target="_blank">Instagram</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="about-box">
+      <p>Photographer and writer originally from central Jersey, then Pittsburgh, then northeast Florida, and now New York.</p>
+      <p>Pitt 2020<br>SVA 2027</p>
+      <p>Insta @SeanMathewRosenthal</p>
+      <p>SMR135@Pitt.edu<br>SRosenthal4@SVA.edu<br>732‑672‑9553</p>
+    </div>
+  </main>
+
+  <footer>© 2025 Sean Mathew Rosenthal</footer>
+
+</body>
+</html>
